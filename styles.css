@@ -13,7 +13,7 @@
 
 /* Fonts */
 
-/* Ypung Serif */
+/* Young Serif */
 @font-face {
     font-family: "Young-Serif";
     src: local("young-serif"), url("./assets/fonts/young-serif/YoungSerif-Regular.ttf");
@@ -83,14 +83,16 @@ main {
 
 .preparation-time {
     padding: 2.5rem;
+    background-color: hsla(330, 100%, 98%, 1);
 }
 
 .preparation-title {
     font-family: "Outfit", sans-serif;
     font-weight: 600;
-    font-size: 1.23rem;
+    font-size: 1.3rem;
     text-align: justify;
     color: var(--rose-800);
+    list-style-position: inside;
 }
 
 .preparation-time ul {
@@ -100,5 +102,48 @@ main {
 }
 
 .preparation-time ul li {
-    color: var(--rose-800);
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    color: var(--stone-600);
+}
+
+.section-title {
+    font-family: "Young-Serif", sans-serif;
+    font-size: 1.5rem;
+    text-align: start;
+    color: var(--brown-800);
+}
+
+.list {
+    text-align: start;
+    position: relative;
+}
+
+.ingredients-list {
+    list-style-type: none;
+}
+
+.ingredients-list li::before {
+    content: "•";
+    color: var(--brown-800);
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.8rem;
+    margin-left: -1rem;
+}
+
+hr {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.instructions-list {
+    padding: 0.8rem;
+}
+
+.instructions-list li::marker {
+    color: var(--brown-800);
+    font-weight: bold;
+    font-size: 1.1rem;
 }
