@@ -34,12 +34,7 @@
     box-sizing: border-box;
 }
 
-body,
-main {
-    height: 100vh;
-}
-
-.fkex-box {
+.flex-box {
     display: flex;
     flex-direction: column;
 }
@@ -59,9 +54,10 @@ main {
     width: 100%;
 }
 
+/*===== Preparation time ====*/
 .recipe-info {
     text-align: initial;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .recipe-name {
@@ -70,20 +66,23 @@ main {
     font-weight: 400;
     line-height: 2.1rem;
     color: var(--stone-900);
-    margin-top: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 .recipe-description {
     font-family: "Outfit", sans-serif;
+    font-size: 1.2rem;
     font-weight: 400;
-    line-height: 1.4rem;
+    line-height: 1.8rem;
     color: var(--stone-600);
+    text-align: start;
     margin-top: 1.5rem;
 }
 
 .preparation-time {
-    padding: 2.5rem;
+    padding: 1.3rem;
     background-color: hsla(330, 100%, 98%, 1);
+    border-radius: 1rem;
 }
 
 .preparation-title {
@@ -98,10 +97,10 @@ main {
 .preparation-time ul {
     padding: 1.5rem;
     font-family: "Outfit", sans-serif;
-    text-align: justify;
 }
 
 .preparation-time ul li {
+    list-style-type: circle;
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -110,9 +109,21 @@ main {
 
 .section-title {
     font-family: "Young-Serif", sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: start;
     color: var(--brown-800);
+    padding: 1rem 0;
+}
+
+.list {
+    font-family: "Outfit", sans-serif;
+    color: var(--stone-600);
+}
+
+/*==== Ingredents list ====*/
+
+.ingredients {
+    padding: 1.3rem 0;
 }
 
 .list {
@@ -138,12 +149,61 @@ hr {
     width: 100%;
 }
 
+/*==== Instructions list ====*/
+
 .instructions-list {
-    padding: 0.8rem;
+    counter-reset: item;
+    padding-left: 0;
+
 }
 
-.instructions-list li::marker {
-    color: var(--brown-800);
+.instructions-list li {
+    display: flex;
+    gap: 0.5rem;
+    counter-increment: item;
+}
+
+.instructions-list li::before {
+    content: counter(item) ".";
     font-weight: bold;
-    font-size: 1.1rem;
+    color: var(--brown-800);
+    min-width: 2rem;
+}
+
+/*==== Nutrition table ====*/
+
+.table-description {
+    font-family: "Outfit", sans-serif;
+    color: var(--stone-600);
+    text-align: center;
+    padding: 1rem;
+}
+
+.nutrition-table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+.table-row {
+    border-bottom: 1px solid var(--stone-600);
+}
+
+.table-category {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--stone-600);
+}
+
+.table-data {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.2rem;
+    color: var(--brown-800);
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+}
+
+.attribution {
+    padding: 1rem;
 }
