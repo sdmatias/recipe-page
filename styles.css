@@ -48,10 +48,15 @@ main {
     width: 327px;
     text-align: center;
     margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 1rem;
 }
+
+/*==== Image ====*/
 
 .omelette-img {
     width: 100%;
+    border-radius: 0.5rem;
 }
 
 /*===== Preparation time ====*/
@@ -95,16 +100,22 @@ main {
 }
 
 .preparation-time ul {
-    padding: 1.5rem;
+    list-style-type: none;
     font-family: "Outfit", sans-serif;
+    text-align: start;
 }
 
 .preparation-time ul li {
-    list-style-type: circle;
-    display: flex;
     gap: 2rem;
-    align-items: center;
-    color: var(--stone-600);
+}
+
+.preparation-time li::before {
+    content: "•";
+    color: var(--rose-800);
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.8rem;
+    margin-left: -1rem;
 }
 
 .section-title {
@@ -129,6 +140,7 @@ main {
 .list {
     text-align: start;
     position: relative;
+    width: 100%;
 }
 
 .ingredients-list {
@@ -154,11 +166,10 @@ hr {
 .instructions-list {
     counter-reset: item;
     padding-left: 0;
-
+    list-style-type: none;
 }
 
 .instructions-list li {
-    display: flex;
     gap: 0.5rem;
     counter-increment: item;
 }
@@ -168,6 +179,11 @@ hr {
     font-weight: bold;
     color: var(--brown-800);
     min-width: 2rem;
+    padding: 1rem;
+}
+
+.step {
+    font-weight: 600;
 }
 
 /*==== Nutrition table ====*/
@@ -206,4 +222,15 @@ hr {
 
 .attribution {
     padding: 1rem;
+}
+
+@media (min-width:768px) {
+    body {
+        background-color: var(--stone-100);
+    }
+
+    .recipe-card {
+        width: 35rem;
+        padding: 2rem;
+    }
 }
